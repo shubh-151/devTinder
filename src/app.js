@@ -5,7 +5,7 @@ const app = express();
 
 app.use("/user", (req, res,next)=>{
     console.log("Handling the route user!!");
-    //res.send("response!!");
+    
     next();
 },(req,res)=>{
     console.log("handling the route user 2!!")
