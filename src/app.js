@@ -3,7 +3,7 @@ const express = require("express");
 
 const app = express();
 
-app.use("/users", (req, res,next)=>{
+app.use("/user", (req, res,next)=>{
     console.log("Handling the route user!!");
     //res.send("response!!");
     next();
