@@ -11,7 +11,7 @@ app.get("/admin/getAllData", (req, res) => {
   //logic of checking if the request is authorized 
     res.send("All data sent");  
 });
-
+ 
 app.get("/admin/deleteUser", (req, res) => {
   //logic of fetching the data
   res.send("Delete a user");
