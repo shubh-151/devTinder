@@ -38,7 +38,7 @@
 - Install mongoose library
 - Connect your application to the database "Connection-url"/devTinder
 - Call the connectDB function and connect to database before starting application on 7777
-- create a userSchema 
+- create a userSchema for the other
 
 
 
