@@ -30,6 +30,15 @@
 - What is middleware
 - How express js basically handles request behind the scenes
 - Diffrence between app.use vs app.all
+- write a dummy auth middleware for admin
+- write a dummy auth middlewares for all user routes, except /user/login
+- erroe handling using app.use("/" (err,req,res,next)={});
+
+- create a free cluster on MongoDB official
+- Install mongoose library
+- Connect your application to the database "Connection-url"/devTinder
+- Call the connectDB function and connect to database before starting application on 7777
+- create a userSchema 
 
 
 
