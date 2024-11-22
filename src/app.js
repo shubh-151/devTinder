@@ -6,10 +6,10 @@ const User = require("./models/user");
 app.post("/signup", async (req, res) => {
   //Creating a new instance of my User model
   const user = new User({
-    firstName: "Akshay",
-    lastName: "Saini",
-    emailID: "akshay@saini.com",
-    password: "Akshay@123",
+    firstName: "shubham",
+    lastName: "Shukla",
+    emailID: "shubham@shukla.com",
+    password: "SHUKLA@123",
   });
   await user.save();
   res.send("User Added sucessfully")
@@ -17,7 +17,7 @@ app.post("/signup", async (req, res) => {
 
 connectDB()
   .then(() => {
-    console.log("database connectuion stablished");
+    console.log("database connection stablished");
     app.listen(7000, () => {
       console.log("server is listining on port 7000..");
     });
