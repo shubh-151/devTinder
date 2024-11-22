@@ -39,7 +39,9 @@
 - Connect your application to the database "Connection-url"/devTinder
 - Call the connectDB function and connect to database before starting application on 7777
 - create a userSchema & user Model
-- 
+- Create POST /signup API to add date to database
+- Push some documents using API calls from postman
+- Error handling using try, catch
 
 
 
