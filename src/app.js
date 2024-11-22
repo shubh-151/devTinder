@@ -6,10 +6,10 @@ const User = require("./models/user");
 app.post("/signup", async (req, res) => {
   //Creating a new instance of my User model
   const user = new User({
-    firstName: "shubham",
-    lastName: "Shukla",
-    emailID: "shubham@shukla.com",
-    password: "SHUKLA@123",
+    firstName: "gAURAV",
+    lastName: "pundir",
+    emailID: "gaurav@gmail.com",
+    password: "gaurav@123",
   });
   await user.save();
   res.send("User Added sucessfully")
