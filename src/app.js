@@ -11,10 +11,10 @@ app.use(express.json());
 app.post("/signup", async (req, res) => {
   //Creating a new instance of my User model
   const user = new User({
-    firstName: "Shivam",
+    firstName: "Shubham",
     lastName: "Shukla",
-    emailId: "shivam@gmail.com",
-    password: "shivam@123",
+    emailID: "shubh@gmail.com",
+    password: "shubh@123",
   });
   await user.save();
   res.send("User Added sucessfully")
