@@ -5,47 +5,55 @@ const User = require("./models/user");
 
 app.use(express.json());
 
-
-
 //Post our data in database
 app.post("/signup", async (req, res) => {
   //Creating a new instance of my User model
   const user = new User({
-    firstName: "Shubham",
+    firstName: "Shivam",
     lastName: "Shukla",
-    emailID: "shubh@gmail.com",
-    password: "shubh@123",
+    emailId: "shivam@gmail.com",
+    password: "shivam@123",
   });
   await user.save();
-  res.send("User Added sucessfully")
+  res.send("User Added sucessfully");
 });
 
 // Get user by email
 app.get("/user", async (req, res) => {
-  // Use req.query.emailId for query parameters
+  // ###For find only on with same emailID the element###
+
   const userEmail = req.body.emailId;
+
   if (!userEmail) {
-    return res.status(400).send("Email ID is required");
+    return res.status(400).send("User not found");
   }
-  
   try {
-    const users = await User.find({ emailId: userEmail });
-    res.send(users);
+    const user = await User.findOne({ emailId: userEmail });
+    if (!user) {
+      return res.status(400).send("User not found");
+    } else {
+      res.send(user);
+    }
   } catch (error) {
-    res.status(400).send("Something went wrong");
+    res.status(400).send("Something went wrong", error);
   }
+
+  // ###For find all the element###
+  // const userEmail = req.body.emailId;
+  // if (!userEmail) {
+  //   return res.status(400).send("Email ID is required");
+  // }
+
+  // try {
+  //   const users = await User.find({ emailId: userEmail });
+  //   res.send(users);
+  // } catch (error) {
+  //   res.status(400).send("Something went wrong");
+  // }
 });
 
-
-
-
-
-
 //feed API - GET / feed - get all the users from the database
-app.get("/feed",(req,res)=>{
-
-})
-
+app.get("/feed", async (req, res) => {});
 
 connectDB()
   .then(() => {
