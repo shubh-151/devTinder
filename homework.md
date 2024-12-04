@@ -43,6 +43,17 @@
 - Push some documents using API calls from postman
 - Error handling using try, catch
 
+- JS object vs JSON(diffrence)
+- Add the express.json middleware to your app
+- Make your signup API dynamic to recieve data from the end user
+- User,findone with duplicate email ids, which object returned
+- API Get user by email
+- API - feed API - GET /feed - get all the users from the database
+- API - GEt user by ID
+- Create a delete user API
+- Diffrence between PUT and PATCH
+- Read about the update and optins(Before and after)
+
 
 
 
