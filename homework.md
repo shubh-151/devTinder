@@ -53,6 +53,10 @@
 - Create a delete user API
 - Diffrence between PUT and PATCH
 - Read about the update and optins(Before and after)
+- API- Upoadte a user
+- Explore the mongoose documentation for model methods
+- What are the optionc a model.findOneAndUpdate method, explore more about it
+- API - Update the user with email ID
 
 
 
