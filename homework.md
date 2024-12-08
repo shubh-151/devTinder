@@ -48,7 +48,7 @@
 - Make your signup API dynamic to recieve data from the end user
 - User,findone with duplicate email ids, which object returned
 - API Get user by email
-- API - feed API - GET /feed - get all the users from the database
+- API - feed API - GET/feed - get all the users from the database
 - API - GEt user by ID
 - Create a delete user API
 - Diffrence between PUT and PATCH
@@ -57,7 +57,14 @@
 - Explore the mongoose documentation for model methods
 - What are the options in a model.findOneAndUpdate method, explore more about it
 - API - Update the user with email ID
-- 
+
+
+
+- Explore schematype options from the documentation
+- add required, unique, lowercase, min, minLength, trim
+- Add default 
+- Create a custom validate function for gender
+- Improve the db userSchema 
 
 
 
