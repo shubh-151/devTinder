@@ -70,7 +70,7 @@
 - Add API Validation for each field 
 - Install validator 
 - Explore validator library function and use validator finct. for password, email and photURL
- 
+- Never trust req.body
 
 
 
