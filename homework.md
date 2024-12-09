@@ -63,7 +63,7 @@
 - Explore schematype options from the documentation
 - add required, unique, lowercase, min, minLength, trim
 - Add default 
-- Create a custom validate function for gender
+- Create a custom validate function for Gender
 - Improve the db userSchema 
 
 
