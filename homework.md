@@ -63,10 +63,14 @@
 - Explore schematype options from the documentation
 - add required, unique, lowercase, min, minLength, trim
 - Add default 
-- Create a custom validate function for gender
+- Create a custom validate function for Gender
 - Improve the db userSchema 
-
-
+- Add timestamps to the userSchema
+- Add API level validation on patch request & Signup post api
+- Add API Validation for each field 
+- Install validator 
+- Explore validator library function and use validator finct. for password, email and photURL
+- Never trust req.body
 
 
 
