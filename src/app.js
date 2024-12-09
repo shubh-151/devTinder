@@ -9,10 +9,10 @@ app.use(express.json());
 app.post("/signup", async (req, res) => {
   //Creating a new instance of my User model
   const user = new User({
-    firstName: "Shivam",
+    firstName: "Shubh",
     lastName: "Shukla",
-    emailId: "shivam@gmail.com",
-    password: "shivam@123",
+    emailId: "shubh13@gmail.com",
+    password: "shubh@123",
   });
   await user.save();
   res.send("User Added sucessfully");
@@ -60,14 +60,11 @@ app.delete("/user", async (req, res)=>{
 
 
 //Update data of the user
-app.patch("/user",async(req,res)=>{
+app.patch("/user/:userId",async(req,res)=>{
 const userId = req.body.userId;
 const data = req.body;
   try {
-     const user = await User.findByIdAndUpdate({_id:userId},data,{
-      returnDocument:"before",
-      runValidators:true,
-      })
+     const user = await User.findByIdAndUpdate({_id:userId},data,{returnDocument:"before"})
      console.log(user)
     res.send("User updated")
   } catch (error) {
