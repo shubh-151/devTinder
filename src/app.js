@@ -8,14 +8,13 @@ app.use(express.json());
 //Post our data in database
 app.post("/signup", async (req, res) => {
   //Creating a new instance of my User model
-  const user = new User({
-    firstName: "Shubh",
-    lastName: "Shukla",
-    emailId: "shubh13@gmail.com",
-    password: "shubh@123",
-  });
-  await user.save();
-  res.send("User Added sucessfully");
+  const user = new User(req.body);
+  try {
+    await user.save();
+    res.send("User Added sucessfully");
+  } catch (error) {
+    res.server(400).send("Error saving the user:" + err.message);
+  }
 });
 
 // Get user by email
@@ -59,13 +58,15 @@ app.delete("/user", async (req, res) => {
 });
 
 //Update data of the user
-app.patch("/user/:userId",async(req,res)=>{
-const userId = req.body.userId;
-const data = req.body;
+app.patch("/user/:userId", async (req, res) => {
+  const userId = req.body.userId;
+  const data = req.body;
   try {
-     const user = await User.findByIdAndUpdate({_id:userId},data,{returnDocument:"before"})
-     console.log(user)
-    res.send("User updated")
+    const user = await User.findByIdAndUpdate({ _id: userId }, data, {
+      returnDocument: "before",
+    });
+    console.log(user);
+    res.send("User updated");
   } catch (error) {
     res.status(400).send("Something went wrong");
   }
