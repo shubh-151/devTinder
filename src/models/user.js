@@ -21,10 +21,21 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
       trim: true,
+      validate(value) {
+        if (!validator.isEmail(value)) {
+          throw new Error("Invalid email address: " + value);
+        }
+      }
+      
     },
     password: {
       type: String,
       required: true,
+      validate(value) {
+        if (!validator.isStrongPassword(value)) {
+          throw new Error("Enter a strong password: " + value);
+        }
+      }
     },
     age: {
       type: Number,
@@ -42,7 +53,12 @@ const userSchema = new mongoose.Schema(
       type: String,
       default:
         "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fvectors%2Fblank-profile-picture-mystery-man-973460%2F&psig=AOvVaw3rKvz6uu-2AH40I_ok5xx3&ust=1733831508238000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKDV1OvPmooDFQAAAAAdAAAAABAE",
-    },
+        validate(value) {
+          if (!validator.isURL(value)) {
+            throw new Error("Invalid photo url: " + value);
+          }
+        }
+      },
     about: {
       type: String,
       default: "This is a default about of the user",

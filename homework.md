@@ -69,7 +69,7 @@
 - Add API level validation on patch request & Signup post api
 - Add API Validation for each field 
 - Install validator 
-- Explore validator library function and use validator finct. for password, email and photURL
+- Explore validator library function and use validator Function for password, email and photURL
 - Never trust req.body
 
 
