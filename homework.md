@@ -73,6 +73,11 @@
 - Never trust req.body
 
 
+- Validate the data in SignUP API
+- Install bycrupt package
+- Create PasswordHash using bcrypt.hash & save the user uis excrupted password
+
+
 
 
 
