@@ -33,16 +33,20 @@ app.post("/signup", async (req, res) => {
 app.post("/login", async(req, res)=>{
   try {
     const {emailId, password} = req.body;
-    const user = await User.findOne({emailId:emailId})
+    const user = await User.findOne({emailId:emailId});
     if(!user){
-      throw new Error("EmailId is not present in db")
+      throw new Error("Invalid credentials")
     }
-    const isPasswordValid = await bcrypt.compare(password,"$2b$10$l31nmue4p9/ddskkpKNSR.4WAOM00xcoa5OU8LUwwh9qpZZlzF7B.")
-    
+    const isPasswordValid = await bcrypt.compare(password,user.password)
+    if(isPasswordValid){
+      res.send("Login sucessful!!!");
+    }else{
+      throw new Error("Invalid credentials");
+    }    
   } catch (error) {
-    res.status(400).send("ERROR:" + err.message);
+    res.status(400).send("ERROR:" + error.message);
   }
-})
+});
 
 // Get Only one user by email
 app.get("/user", async (req, res) => {
