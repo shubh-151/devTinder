@@ -76,8 +76,8 @@
 - Validate the data in SignUP API
 - Install bycrupt package
 - Create PasswordHash using bcrypt.hash & save the user uis excrupted password
-- Create login API and 
-- Compare password and throw error if email and password in invalid
+- Create login API and. 
+- Compare password and throw error if email and password in invalid.
 
 
 
