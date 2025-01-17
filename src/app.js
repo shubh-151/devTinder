@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 
 app.use(express.json());
 
-// Post new user data to the database
+// Post new user data in database
 app.post("/signup", async (req, res) => {
   try {
     // Validation of the data
