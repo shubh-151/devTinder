@@ -1,3 +1,68 @@
+document.getElementById("download-pdf").addEventListener("click", async function () {
+    // Trigger the form submission asynchronously
+    const form = document.getElementById("fnoReport");
+    if (!form) {
+        alert("Form not found!");
+        return;
+    }
+
+    form.submit();
+
+    try {
+        // Wait for the table data to load
+        await waitForTableData();
+        // Generate the PDF
+        generatePDF();
+    } catch (error) {
+        console.error("Error waiting for table data:", error);
+        alert("Failed to load table data. Please try again.");
+    }
+});
+
+function waitForTableData() {
+    return new Promise((resolve, reject) => {
+        const reportTable = document.getElementById("fnoReport");
+        if (!reportTable) {
+            reject(new Error("Report table not found!"));
+            return;
+        }
+
+        const tbody = reportTable.querySelector("tbody");
+        if (!tbody) {
+            reject(new Error("Table body not found!"));
+            return;
+        }
+
+        const observer = new MutationObserver(() => {
+            if (tbody.children.length > 0) {
+                observer.disconnect(); // Stop observing
+                resolve(); // Resolve the promise
+            }
+        });
+
+        // Start observing the table's body for changes
+        observer.observe(tbody, { childList: true });
+
+        // Add a timeout to avoid waiting indefinitely
+        setTimeout(() => {
+            observer.disconnect(); // Stop observing on timeout
+            reject(new Error("Table data did not load within the expected time."));
+        }, 10000); // 10 seconds timeout
+    });
+}
+
+function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    const table = document.getElementById("fnoReport");
+    if (table) {
+        doc.autoTable({ html: table });
+        doc.save("FnoReport.pdf");
+    } else {
+        alert("Table not found!");
+    }
+}
 - create a repository
 - Initialize the repository
 - node_modules, package.json, package.json
@@ -76,8 +141,8 @@
 - Validate the data in SignUP API
 - Install bycrupt package
 - Create PasswordHash using bcrypt.hash & save the user uis excrupted password
-- Create login API and 
-- Compare password and throw error if email and password in invalid
+- Create login API and. 
+- Compare password and throw error if email and password in invalid.
 
 
 
