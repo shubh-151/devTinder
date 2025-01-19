@@ -145,6 +145,13 @@ function generatePDF() {
 - Compare password and throw error if email and password in invalid.
 
 
+- install cookie-parser
+- just send a dummy cookie to user 
+- create GET /profile API and check if you get the cookie back 
+- install jsonwebtoken 
+- In login API, after email and password validation, create a JWT token and send it to user
+- read the cookie inside your profile API and Find the logged in user 
+
 
 
 

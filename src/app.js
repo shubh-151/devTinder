@@ -59,11 +59,9 @@ app.get("/profile", async (req, res) => {
   try {
     const cookies = req.cookies;
     const { token } = cookies;
-
     if (!token) {
       throw new Error("Invalid token");
     }
-
     // Validate my token
     const decodedMessage = await jwt.verify(token, "DEVTinder$790");
     const { _id } = decodedMessage;
@@ -71,7 +69,6 @@ app.get("/profile", async (req, res) => {
     if (!user) {
       throw new Error("User does not exist");
     }
-
     res.send(user);
   } catch (error) {
     res.status(400).send("ERROR:" + error.message);
