@@ -159,6 +159,16 @@ function generatePDF() {
 
 
 
+- Explore tinder APIs
+- Create A list all API you can think of in dev Tinder
+- Group multiple routes under repective routers 
+- Read documentation for express.Router
+- Create routes folder for managing auth, profile, request routers
+- create authRouter, profileRouter, requestRouter
+- Import these rouetrs in app.js
+
+
+
 
 
 
