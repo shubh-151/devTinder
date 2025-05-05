@@ -166,6 +166,10 @@ function generatePDF() {
 - Create routes folder for managing auth, profile, request routers
 - create authRouter, profileRouter, requestRouter
 - Import these rouetrs in app.js
+- Create POST /logout API
+- Create PATCH /profile/edit
+- Create PATCH /profile/password API=> Forgot password API
+- Make you validated all data in every POST, PATCH APIS 
 
 
 
