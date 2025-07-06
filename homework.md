@@ -170,6 +170,16 @@ function generatePDF() {
 - Create PATCH /profile/edit
 - Create PATCH /profile/password API=> Forgot password API
 - Make you validated all data in every POST, PATCH APIS 
+- Create connection request schema
+- Send Connection Request API
+- Proper validation of data
+- Think about ALL corner cases
+- $or query $and query in mongoose (https://www.mongodb.com/docs/manual/reference/operator/query-logical/)
+- schema.pre ("save") function
+- Read more about indexes in MondoDB
+- Why do we need index in DB?
+- What is the advantage and disadvantage of creating?
+- Always think about corner cases
 
 
 
