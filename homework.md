@@ -181,25 +181,14 @@ function generatePDF() {
 - What is the advantage and disadvantage of creating?
 - Always think about corner cases
 
+- write code with proper validation for POST /request/review/:status/:requestId
+- Thought process -POST vs GET 
+
+- Read about ref and populate
+- create Get user/request/received with all the checks 
+- create GET API  user/connections 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- logic for GET feed/ API
+- Explore the $nin, $and, $ne and other query operators
+- pagination 
